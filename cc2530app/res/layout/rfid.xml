@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@android:id/tabhost"  
+	android:background="@drawable/bk08"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent">
+  	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	   	android:layout_width="fill_parent" 
+	   	android:layout_height="fill_parent"
+	   	android:orientation="vertical">
+    	<TabWidget android:id="@android:id/tabs"   
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+			
+			android:gravity="center" >
+		</TabWidget>
+			
+    	<FrameLayout android:id="@android:id/tabcontent"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+			<ScrollView
+				android:scrollbars="vertical"
+				android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent"> 
+	    		<LinearLayout android:id="@+id/rfidInfoView"
+	    			android:visibility="invisible"
+	    			android:orientation="vertical"
+	    		    android:layout_width="fill_parent" 
+	    			android:layout_height="fill_parent"> 
+					<include android:id="@+id/comm_node_info" layout="@layout/comm_node_info"/>		
+				</LinearLayout>
+			</ScrollView>
+			
+			<ScrollView
+				android:scrollbars="vertical"
+				android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent"> 
+				 <RelativeLayout android:id="@+id/rfidCtrlView"
+				     android:visibility="invisible"
+				     
+				      android:layout_width="fill_parent"  
+				    android:layout_height="fill_parent">
+				      	
+			    	<ImageView android:id="@+id/rfidImageView"
+				    	android:padding="30dip"	
+				       	android:gravity="center_horizontal"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content" 
+				        android:src="@drawable/co2sensorenable"/>
+			        
+			        <TextView android:id="@+id/ctext"
+			        	android:layout_width="10dip"
+			        	android:layout_height="wrap_content"
+			        	android:textSize="30dip"
+			        	android:padding="30dip"
+			        	android:layout_centerHorizontal="true"
+			    		android:layout_below="@id/rfidImageView"/>
+			    		
+			    	<Button android:id="@+id/rfidBtnEnable" 
+			    		android:text="启用"
+			    		android:layout_margin="20dip"
+			    		android:textSize="30dip"
+			    		android:textColor="#FF0000FF"	
+			    		android:layout_toLeftOf="@id/ctext"
+			    		android:layout_alignTop="@id/ctext"
+			    		android:layout_width="wrap_content"
+			    		android:layout_height="wrap_content"/>
+			    		
+			    	<Button android:id="@+id/rfidBtnDisable"
+			    		android:text="禁止"
+			    		android:layout_margin="20dip"
+			    		android:textSize="30dip"
+			    		android:textColor="#FF0000FF"	
+			    		android:layout_toRightOf="@id/ctext"
+			    		android:layout_alignTop="@id/ctext"
+			    		android:layout_width="wrap_content"
+			    		android:layout_height="wrap_content"/>
+			    		
+			    		
+			    	<LinearLayout android:orientation="horizontal"
+			    		android:layout_below="@id/rfidBtnDisable"
+		    			android:layout_width="wrap_content"
+		    		    android:layout_height="wrap_content">
+    					<TextView style="@style/node_comm_info_text_style"
+    						android:layout_width="wrap_content"
+    						android:textSize="17pt"
+    						android:paddingLeft="15dip"
+    						android:text="启用短信跟踪"/>
+    					<CheckBox android:id="@+id/rfidMsgEnableCheckBox"
+    						android:layout_width="wrap_content"
+    						android:layout_height="wrap_content" 
+    						android:checked="true"
+    						android:textColor="#FF0000FF"/>
+    				</LinearLayout>	
+				</RelativeLayout>
+	    	</ScrollView>
+			
+			
+			<!--ScrollView
+				android:scrollbars="vertical"
+				android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent"-->
+			    
+			     <RelativeLayout android:id="@+id/rfidMagView"
+			     	android:layout_width="fill_parent"
+			     	android:layout_height="fill_parent"
+				     android:visibility="invisible">
+				     
+				  <LinearLayout android:id="@+id/rfidMagView"
+	    			android:orientation="vertical"
+	    		    android:layout_width="fill_parent" 
+	    			android:layout_height="wrap_content">
+	    			  <LinearLayout
+	    			  	android:orientation="horizontal"
+	    			  	android:layout_width="wrap_content" 
+	    			  	android:layout_height="wrap_content"
+	    			  	>
+	    			  	<TextView 		
+	    			  		style="@style/node_comm_info_text_style"
+	    			  		android:textSize="15pt"
+	    			  		android:text="用户ID:"
+	    			  		android:layout_width="80dip"
+	    			  		>
+	    			  	</TextView>
+	    			  	<EditText		
+	    			  		android:id="@+id/cardId" 
+	    			  	 	android:editable="false"
+							style="@style/node_comm_info_edit_style"
+							android:textSize="15pt"
+							android:layout_width="170dip"
+	    			  		>
+	    			  	</EditText>
+	    			  	<TextView 		
+	    			  		style="@style/node_comm_info_text_style"
+	    			  		android:textSize="15pt"
+	    			  		android:text="监控号码:"
+	    			  		android:layout_width="120dip"
+	    			  		>
+	    			  	</TextView>
+	    			  	
+	    			  	<EditText	android:id="@+id/phone"	 
+							style="@style/node_comm_info_edit_style"
+							android:textSize="15pt"
+							android:layout_width="270dip"
+	    			  		>
+	    			  	</EditText>	
+	    			  	<Button	android:id="@+id/addcard"
+	    			  		style="@style/node_comm_info_edit_style"
+	    			  		android:textSize="15pt"
+	    			  		android:layout_width="wrap_content"
+	    			  		android:layout_height="wrap_content"
+	    			  		android:text="添加"
+	    			  		>
+	    			  	</Button>
+	    			  </LinearLayout>
+	    			   <LinearLayout
+	    			  	android:orientation="horizontal"
+	    			  	android:layout_width="fill_parent" 
+	    			  	android:layout_height="wrap_content"
+	    			  	>
+	    			  		<TextView 		
+	    			  		
+	    			  		android:textSize="17pt"
+	    			  		android:text="用户ID"
+	    			  		   android:textColor="#FF0000FF"
+						        android:layout_width="fill_parent"
+						        android:layout_height="wrap_content"
+						        android:layout_weight="1"
+	    			  		>
+	    			  	</TextView>
+	    			  		<TextView 		
+	    			  	   android:textColor="#FF0000FF"
+					        android:layout_width="fill_parent"
+					        android:layout_height="wrap_content"
+					        android:textSize="17pt"
+					        android:layout_weight="1"
+					        
+	    			  		android:text="监控号码"
+	    			  		
+	    			  		>
+	    			  	</TextView>
+	    			  	</LinearLayout>
+	    			  <ListView 
+	    			  	android:id="@+id/listView"
+	    			  	android:layout_height="wrap_content"
+	    			  	android:layout_width="fill_parent">
+	    			  </ListView>
+	    			     
+				   </LinearLayout>
+				     
+				 </RelativeLayout>
+			    
+		    <!--/ScrollView-->
+			
+		</FrameLayout>
+	</LinearLayout>
+</TabHost>

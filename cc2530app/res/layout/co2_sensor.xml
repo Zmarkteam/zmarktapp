@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@android:id/tabhost"  
+	android:background="@drawable/bk08"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent">
+  	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	   	android:layout_width="fill_parent" 
+	   	android:layout_height="fill_parent"
+	   	android:orientation="vertical">
+    	<TabWidget android:id="@android:id/tabs"   
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+			
+			android:gravity="center" >
+		</TabWidget>
+			
+    	<FrameLayout android:id="@android:id/tabcontent"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+			<ScrollView
+				android:scrollbars="vertical"
+				android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent"> 
+	    		<LinearLayout android:id="@+id/co2sensorInfoView"
+	    			android:visibility="invisible"
+	    			android:orientation="vertical"
+	    		    android:layout_width="fill_parent" 
+	    			android:layout_height="fill_parent"> 
+					<include android:id="@+id/comm_node_info" layout="@layout/comm_node_info"/>		
+				</LinearLayout>
+			</ScrollView>
+			
+			
+			<ScrollView
+				android:scrollbars="vertical"
+				android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent">
+		    	 <RelativeLayout android:id="@+id/co2sensorConfigView"
+				    android:visibility="invisible"
+				    android:layout_width="fill_parent"  
+				    android:layout_height="wrap_content">
+				     
+				    <ImageView android:id="@+id/co2sensorImageView"
+				    	android:padding="30dip"	
+				       	android:gravity="center_horizontal"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content" 
+				        android:src="@drawable/co2sensorenable"/>
+			        
+			        <TextView android:id="@+id/ctext"
+			        	android:layout_width="10dip"
+			        	android:layout_height="wrap_content"
+			        	android:textSize="30dip"
+			        	android:padding="30dip"
+			        	android:layout_centerHorizontal="true"
+			    		android:layout_below="@id/co2sensorImageView"/>
+			    		
+			    	<Button android:id="@+id/co2sensorBtnEnable" 
+			    		android:text="启用"
+			    		android:layout_margin="20dip"
+			    		android:textSize="30dip"
+			    		android:textColor="#FF0000FF"	
+			    		android:layout_toLeftOf="@id/ctext"
+			    		android:layout_alignTop="@id/ctext"
+			    		android:layout_width="wrap_content"
+			    		android:layout_height="wrap_content"/>
+			    		
+			    	<Button android:id="@+id/co2sensorBtnDisable"
+			    		android:text="禁止"
+			    		android:layout_margin="20dip"
+			    		android:textSize="30dip"
+			    		android:textColor="#FF0000FF"	
+			    		android:layout_toRightOf="@id/ctext"
+			    		android:layout_alignTop="@id/ctext"
+			    		android:layout_width="wrap_content"
+			    		android:layout_height="wrap_content"/>
+			    	
+			    	
+			    <LinearLayout android:orientation="vertical"
+			    	android:layout_below="@id/ctext"
+			    	android:layout_width="fill_parent"
+		    		android:layout_height="wrap_content">
+		    		
+		    		<LinearLayout android:orientation="horizontal"
+		    			android:layout_width="wrap_content"
+		    		    android:layout_height="wrap_content">
+		    		 	<TextView   style="@style/node_comm_info_text_style"
+			    			android:text="报警号码"></TextView>
+			    		<EditText android:id="@+id/co2sensorAlarmNumberEditText"
+				    		style="@style/node_comm_info_edit_style"/>
+		    		</LinearLayout>
+		    		    
+			    	<LinearLayout android:orientation="horizontal"
+		    			android:layout_width="wrap_content"
+		    		    android:layout_height="wrap_content">
+    					<TextView style="@style/node_comm_info_text_style"
+    						android:text="启用报警"/>
+    					<CheckBox android:id="@+id/co2sensorAlarmCheckBox"
+    						android:layout_width="wrap_content"
+    						android:layout_height="wrap_content" 
+    						android:textColor="#FF0000FF"/>
+    				</LinearLayout>
+  	
+			    </LinearLayout>
+			    				      
+			</RelativeLayout> 
+		    </ScrollView>
+			
+		</FrameLayout>
+	</LinearLayout> 
+</TabHost>

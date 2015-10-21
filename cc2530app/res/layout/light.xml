@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@android:id/tabhost"  
+	android:background="@drawable/bk08"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent">
+  	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	   	android:layout_width="fill_parent" 
+	   	android:layout_height="fill_parent"
+	   	android:orientation="vertical">
+    	<TabWidget android:id="@android:id/tabs"   
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+			
+			android:gravity="center" >
+		</TabWidget>
+			
+    	<FrameLayout android:id="@android:id/tabcontent"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+			<ScrollView
+				android:scrollbars="vertical"
+				android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent"> 
+	    		<LinearLayout android:id="@+id/linghtInfoView"
+	    			android:visibility="invisible"
+	    			android:orientation="vertical"
+	    		    android:layout_width="fill_parent" 
+	    			android:layout_height="fill_parent"> 
+					<include android:id="@+id/comm_node_info" layout="@layout/comm_node_info"/>		
+				</LinearLayout>
+			</ScrollView>
+			
+			<ScrollView
+				android:scrollbars="vertical"
+				android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent"> 
+				 <RelativeLayout android:id="@+id/lightControlView"
+				     android:visibility="invisible"
+				     
+				      android:layout_width="fill_parent"  
+				    android:layout_height="fill_parent">
+				      
+				    <ImageView android:id="@+id/lightImageView"
+				    		
+				    	android:paddingTop="80dip"
+				       	android:gravity="center_horizontal"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content" 
+				        android:src="@drawable/lightoff"/>
+				    <!--TextView 
+				      	android:gravity="center_horizontal"
+				    	android:layout_width="fill_parent"
+				    	android:layout_height="wrap_content"
+				    	android:text="亮度"/>
+				    <ProgressBar
+				    	 style="?android:attr/progressBarStyleHorizontal" 
+				    	 mce_style="?android:attr/progressBarStyleHorizontal"     
+				         android:layout_width="fill_parent"   
+				         android:layout_height="wrap_content"/-->
+
+				    	<Button android:id="@+id/lightBtnReverse" 
+				    		android:text="反转"
+				    		android:layout_margin="20dip"
+				    		android:textSize="30dip"
+				    		android:textColor="#FF0000FF"	
+				    		android:layout_centerHorizontal="true"
+				    		android:layout_below="@id/lightImageView"
+				    		android:layout_width="wrap_content"
+				    		android:layout_height="wrap_content"/>
+				    		
+				    	<Button android:id="@+id/lightBtnOn"
+				    		android:text="开启"
+				    		android:textColor="#FF0000FF"	
+				    		android:textSize="30dip"
+				    		android:layout_toLeftOf="@id/lightBtnReverse"
+				    		android:layout_alignTop="@id/lightBtnReverse"
+				    		android:layout_width="wrap_content"
+				    		android:layout_height="wrap_content"/>
+				    	
+				    	<Button android:id="@+id/lightBtnOff" 
+				    		android:text="关闭"
+				    		android:textColor="#FF0000FF"
+				    		android:textSize="30dip"
+				    		android:layout_toRightOf="@id/lightBtnReverse"
+				    		android:layout_alignTop="@id/lightBtnReverse"
+				    		
+				    		android:layout_width="wrap_content"
+				    		android:layout_height="wrap_content"/>		
+			    
+			</RelativeLayout>
+	    	</ScrollView>
+			
+			<ScrollView
+				android:scrollbars="vertical"
+				android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent">
+		    	<TextView  android:id="@+id/linghtLogView"
+		    		android:visibility="invisible"
+		    		android:layout_width="fill_parent"
+		   			android:layout_height="fill_parent"
+		   			android:scrollbars="vertical"	
+		        	android:singleLine="false"
+		        	android:maxLines="20"
+		        	android:textSize="20dip"
+		        	android:textColor="#ff0000ff"
+		        	android:paddingLeft="20dip"
+		        	android:paddingTop="10dip">
+	    		</TextView>
+		    </ScrollView>
+			
+		</FrameLayout>
+	</LinearLayout>
+</TabHost>

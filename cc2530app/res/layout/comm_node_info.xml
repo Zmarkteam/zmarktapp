@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+    	android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical">
+
+        <LinearLayout android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+         	android:orientation="horizontal">
+        	
+        	<TextView style="@style/node_comm_info_text_style"
+        		android:text="物理地址">
+        	</TextView>
+			<EditText
+				 android:id="@+id/EditText_IEEEAddr" 
+				 android:editable="false"
+				style="@style/node_comm_info_edit_style"
+
+           		>
+           	</EditText>
+        </LinearLayout>
+        
+        
+        <LinearLayout android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+         	android:orientation="horizontal">
+        	
+        	<TextView style="@style/node_comm_info_text_style"
+        		android:text="网络地址">
+        	</TextView>
+			<EditText
+				android:id="@+id/EditText_NetAddr" 
+				style="@style/node_comm_info_edit_style"
+				android:editable="false"
+           		>
+           	</EditText>
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+         	android:orientation="horizontal">
+        	
+        	<TextView style="@style/node_comm_info_text_style"
+        		android:text="结点类型">
+        	</TextView>
+			<EditText
+				android:id="@+id/EditText_NodeType" 
+				style="@style/node_comm_info_edit_style"
+				android:editable="false"
+           		>
+           	</EditText>
+        </LinearLayout>
+        
+        <LinearLayout android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+         	android:orientation="horizontal">	
+        	<TextView style="@style/node_comm_info_text_style"
+        		android:text="设备类型"/>
+			<EditText android:id="@+id/EditText_DeviceType" 
+				style="@style/node_comm_info_edit_style"
+				android:editable="false"/>    	
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+         	android:orientation="horizontal">	
+        	<TextView style="@style/node_comm_info_text_style"
+        		android:text="硬件版本"/>
+			<EditText android:id="@+id/EditText_HardVer" 
+				style="@style/node_comm_info_edit_style"
+				android:editable="false"/>    	
+        </LinearLayout>
+        
+       <LinearLayout android:layout_width="wrap_content" 
+        	android:layout_height="wrap_content" 
+         	android:orientation="horizontal">	
+        	<TextView style="@style/node_comm_info_text_style"
+        		android:text="软件版本"/>
+			<EditText android:id="@+id/EditText_SoftVer" 
+				style="@style/node_comm_info_edit_style"
+				android:editable="false"/>    	
+        </LinearLayout>
+                
+    </LinearLayout>

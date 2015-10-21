@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="fill_parent" android:layout_width="fill_parent" 
+	android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+<ViewFlipper android:layout_height="match_parent" android:layout_width="match_parent" 
+	android:id="@+id/viewFlipper1">
+	<include android:id="@+id/top" layout="@layout/top"></include>
+	<!--include android:id="@+id/coordinator" layout="@layout/coordinator"></include-->
+</ViewFlipper>
+</LinearLayout>

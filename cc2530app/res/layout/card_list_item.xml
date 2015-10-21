@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+   android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="10dip"
+    android:paddingLeft="10dip"
+    android:paddingTop="1dip"
+    android:paddingBottom="1dip"
+    >
+    <!--ListView的每一项都有两个TextView，分别显示userId和userName  -->
+    <TextView
+        android:id="@+id/ID"
+       
+        android:textColor="#FF0000FF"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17pt"
+        android:layout_weight="1"
+        />
+    <TextView
+        android:id="@+id/PHONE"
+       
+        android:textColor="#FF0000FF"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17pt"
+        android:layout_weight="1"
+        />
+</LinearLayout>

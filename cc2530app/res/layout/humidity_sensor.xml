@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@android:id/tabhost"  
+android:background="@drawable/bk08"
+android:layout_width="fill_parent" 
+android:layout_height="fill_parent">
+  <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_width="fill_parent" 
+    	android:layout_height="fill_parent"
+    	android:orientation="vertical">
+    	<TabWidget android:id="@android:id/tabs"   
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+			
+			android:gravity="center" ></TabWidget>
+			
+    	<FrameLayout android:id="@android:id/tabcontent"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+			<ScrollView
+			android:scrollbars="vertical"
+			android:layout_width="fill_parent" 
+		    android:layout_height="fill_parent"
+			> 
+    		<LinearLayout android:id="@+id/humidityInfoView"
+    			android:visibility="invisible"
+    			android:orientation="vertical"
+    		    android:layout_width="fill_parent" 
+    			android:layout_height="fill_parent"> 
+				<include android:id="@+id/comm_node_info" layout="@layout/comm_node_info"></include>
+				<TextView
+	   			android:id="@+id/tvHumiditySensorData"
+	   			android:layout_width="fill_parent"
+	   			android:layout_height="fill_parent"
+	   			android:scrollbars="vertical"	
+	        	android:singleLine="false"
+	        	android:maxLines="10"
+	        	android:textColor="#ff0000ff"
+	        	android:paddingLeft="9dip"
+	        	android:paddingTop="4dip"
+        		></TextView>
+			</LinearLayout>
+			</ScrollView>
+			
+			<com.embedkit.zigbee.HumidityCurveView
+        	android:id="@+id/humidityCurveView"
+        	android:visibility="invisible"
+        	android:paddingLeft="0dip"
+        	android:paddingTop="0dip"
+        	android:layout_height="fill_parent"
+        	android:layout_width="fill_parent">
+        	</com.embedkit.zigbee.HumidityCurveView>
+	        <ScrollView
+			android:scrollbars="vertical"
+			android:layout_width="fill_parent" 
+		    android:layout_height="wrap_content">
+        	<LinearLayout android:id="@+id/humidityConfigView"
+        		android:visibility="invisible"
+    			android:orientation="vertical" 
+    		    android:layout_width="fill_parent"
+    		    android:layout_height="wrap_content">
+    			
+    			<LinearLayout android:orientation="horizontal"
+    			 android:layout_width="fill_parent"
+    		    android:layout_height="wrap_content">
+	    			<!-- TextView style="@style/node_comm_info_text_style"
+	    			android:text="采集频率"/>
+	    			<EditText
+				 		android:id="@+id/temp_et_freq" 
+						style="@style/node_comm_info_edit_style"/-->
+    			</LinearLayout>
+    			
+    			<LinearLayout android:orientation="horizontal"
+    			 android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content">
+	    			<TextView style="@style/node_comm_info_text_style"
+	    			android:text="超值报警"/>
+	    			<EditText
+	    				android:text="80"
+				 		android:id="@+id/humidity_et_heighter" 
+						style="@style/node_comm_info_edit_style"/>
+    			</LinearLayout>
+    			<LinearLayout android:orientation="horizontal"
+    			 android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content">
+	    			<TextView style="@style/node_comm_info_text_style"
+	    			android:text="低值报警"/>
+	    			<EditText
+				 		android:id="@+id/humidity_et_lower" 
+				 		android:text="50"
+						style="@style/node_comm_info_edit_style"/>
+    			</LinearLayout>
+    			<LinearLayout android:orientation="horizontal"
+    			 android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content">
+	    			<TextView style="@style/node_comm_info_text_style"
+	    			android:text="报警号码"/>
+	    			<EditText
+				 		android:id="@+id/humidity_et_number" 
+						style="@style/node_comm_info_edit_style"/>
+    			</LinearLayout>
+    			
+    			<LinearLayout android:orientation="horizontal"
+    			 android:layout_width="wrap_content"
+    		    android:layout_height="wrap_content">
+    			<TextView style="@style/node_comm_info_text_style"
+    			android:text="启用报警"/>
+    			<CheckBox android:id="@+id/humidity_checkbox_enable_alarm"
+    				android:layout_width="wrap_content"
+    				android:layout_height="wrap_content" 
+    				android:textColor="#FF0000FF"
+    				/>
+    			</LinearLayout>
+    		</LinearLayout>
+    		</ScrollView>
+		</FrameLayout>
+        	
+       </LinearLayout>
+</TabHost>

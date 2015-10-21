@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@android:id/tabhost"  
+	android:background="@drawable/bk08"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent">
+  	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	   	android:layout_width="fill_parent" 
+	   	android:layout_height="fill_parent"
+	   	android:orientation="vertical">
+    	<TabWidget android:id="@android:id/tabs"   
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content" 
+			
+			android:gravity="center" >
+		</TabWidget>
+			
+    	<FrameLayout android:id="@android:id/tabcontent"
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+			<ScrollView
+				android:scrollbars="vertical"
+				android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent"> 
+	    		<LinearLayout android:id="@+id/DistanceSensorInfoView"
+	    			android:visibility="invisible"
+	    			android:orientation="vertical"
+	    		    android:layout_width="fill_parent" 
+	    			android:layout_height="fill_parent"> 
+					<include android:id="@+id/comm_node_info" layout="@layout/comm_node_info"/>		
+				</LinearLayout>
+			</ScrollView>
+			
+			 
+			<ScrollView
+				android:scrollbars="vertical"
+				android:layout_width="fill_parent" 
+			    android:layout_height="fill_parent">
+			    
+		    	 <RelativeLayout android:id="@+id/DistanceSensorCtrlView"
+				    android:visibility="invisible"
+				    android:layout_width="fill_parent"  
+				    android:layout_height="wrap_content">
+		 		     
+				    <EditText android:id="@+id/DistanceSensorEditText"
+				   		 android:editable="false"
+						style="@style/node_comm_info_edit_style"
+				       	android:gravity="center_horizontal"
+				       	android:layout_centerHorizontal="true"
+				       	android:textSize="30dip"
+				       	android:textColor="#FFff0000"
+				       	android:text=""/>
+			        
+			         <TextView 
+			        	android:layout_width="wrap_content"
+			        	android:layout_height="wrap_content"
+			        	android:textSize="30dip"
+			        	android:padding="5dip"
+			        	android:text="当前距离"
+			        	android:textColor="#FF0000FF"
+			        	android:layout_alignBottom = "@id/DistanceSensorEditText"
+			    		android:layout_toLeftOf="@id/DistanceSensorEditText"/>
+			    	  <TextView 
+			        	android:layout_width="wrap_content"
+			        	android:layout_height="wrap_content"
+			        	android:textSize="30dip"
+			        	android:padding="5dip"
+			        	android:text="CM"
+			        	android:textColor="#FF0000FF"
+			        	android:layout_alignBottom = "@id/DistanceSensorEditText"
+			    		android:layout_toRightOf="@id/DistanceSensorEditText"/>
+			    	
+			    		 
+			        <TextView android:id="@+id/ctext"
+			        	android:layout_width="10dip"
+			        	android:layout_height="wrap_content"
+			        	android:textSize="30dip"
+			        	android:padding="30dip"
+			        	android:layout_centerHorizontal="true"
+			    		android:layout_below="@id/DistanceSensorEditText"/>
+			    		
+			    	<Button android:id="@+id/BtnEnable" 
+			    		android:text="启用"
+			    		android:layout_margin="20dip"
+			    		android:textSize="30dip"
+			    		android:textColor="#FF0000FF"	
+			    		android:layout_toLeftOf="@id/ctext"
+			    		android:layout_alignTop="@id/ctext"
+			    		android:layout_width="wrap_content"
+			    		android:layout_height="wrap_content"/>
+			    		
+			    	<Button android:id="@+id/BtnDisable"
+			    		android:text="禁止"
+			    		android:layout_margin="20dip"
+			    		android:textSize="30dip"
+			    		android:textColor="#FF0000FF"	
+			    		android:layout_toRightOf="@id/ctext"
+			    		android:layout_alignTop="@id/ctext"
+			    		android:layout_width="wrap_content"
+			    		android:layout_height="wrap_content"/>
+			    	
+			    	
+			    <LinearLayout android:orientation="vertical"
+			    	android:layout_below="@id/ctext"
+			    	android:layout_width="fill_parent"
+		    		android:layout_height="wrap_content">
+		    		
+		    		<LinearLayout android:orientation="horizontal"
+		    			android:layout_width="wrap_content"
+		    		    android:layout_height="wrap_content">
+		    		 	<TextView   style="@style/node_comm_info_text_style"
+			    			android:text="限制距离"></TextView>
+			    		<EditText android:id="@+id/DistenceLimitEditText"
+				    		style="@style/node_comm_info_edit_style"
+				    		android:text="10"/>
+				    	<TextView
+				    	android:layout_width="wrap_content"
+		    		    android:layout_height="wrap_content"
+		    		    android:textSize="14sp"
+		    		    
+				    		android:textColor="#FF0000FF"  
+			    			android:text="CM"></TextView>
+		    		</LinearLayout>
+		    		
+		    		<LinearLayout android:orientation="horizontal"
+		    			android:layout_width="wrap_content"
+		    		    android:layout_height="wrap_content">
+		    		 	<TextView   style="@style/node_comm_info_text_style"
+			    			android:text="报警号码"></TextView>
+			    		<EditText android:id="@+id/DistenceSensorAlarmNumberEditText"
+				    		style="@style/node_comm_info_edit_style"/>
+		    		</LinearLayout>
+		    		    
+			    	<LinearLayout android:orientation="horizontal"
+		    			android:layout_width="wrap_content"
+		    		    android:layout_height="wrap_content">
+    					<TextView style="@style/node_comm_info_text_style"
+    						android:text="启用报警"/>
+    					<CheckBox android:id="@+id/DisSensorAlarmCheckBox"
+    						android:layout_width="wrap_content"
+    						android:layout_height="wrap_content"
+    						android:checked="true" 
+    						android:textColor="#FF0000FF"/>
+    				</LinearLayout>
+  	
+			    </LinearLayout>
+			    				      
+			</RelativeLayout>
+			
+		    </ScrollView>
+			
+		</FrameLayout>
+	</LinearLayout> 
+</TabHost>
